@@ -25,9 +25,11 @@ class FormApiView(APIView):
                 Url: {}
                 Email: {}
                 IP address: {}
+                Period: {}
                 Name: {}
             '''.format(serializer.data.get('url'), serializer.data.get('email'),
-                       serializer.data.get('ip'), serializer.data.get('name'))
+                       serializer.data.get('ip'), serializer.data.get('period'),
+                       serializer.data.get('name'))
             send_mail(subject='New submit', message=message,
                       from_email=settings.EMAIL_FROM, recipient_list=[serializer.data.get('email')])
             return Response(serializer.data, status=status.HTTP_201_CREATED)

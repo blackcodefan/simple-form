@@ -1,8 +1,9 @@
 import React, { FC, useState } from 'react';
-import { Alert, Button, Form, Input } from 'antd';
-import './App.scss';
+import { Alert, Button, Form, Input, Select } from 'antd';
 import { Container, H1 } from "./components";
-import {response} from "express";
+import './App.scss';
+
+const { Option } = Select;
 
 interface Message {
     type: 'success' | 'info' | 'warning' | 'error',
@@ -17,6 +18,7 @@ const App: FC = () => {
     const [message, setMessage] = useState<Message | null>(null);
 
     const onFinish = async (values: any) => {
+        console.log(values);
         setLoading(true);
         setMessage(null);
         fetch('/api/form', {
@@ -92,6 +94,23 @@ const App: FC = () => {
                     <Input
                         placeholder="Enter the ip address"
                     />
+                </Form.Item>
+                <Form.Item
+                    label="Period"
+                    name="period"
+                    rules={[
+                        {required: true, message: 'Period is required'}
+                    ]}
+                >
+                    <Select
+                      placeholder="Select a period"
+                      allowClear
+                    >
+                      <Option value="now">Run now</Option>
+                      <Option value="daily">Run Daily</Option>
+                      <Option value="monthly">Run Monthly</Option>
+                      <Option value="quarterly">Run Quarterly</Option>
+                    </Select>
                 </Form.Item>
                 <Form.Item
                     label="Name"
