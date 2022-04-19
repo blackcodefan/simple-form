@@ -4,7 +4,7 @@ const Container = styled.div`
   width: 760px;
   margin: auto;
   min-height: 50vh;
-  background-color: #f1f1f1;
+  background-color: transparent;
   border-radius: 5px;
   padding: 20px;
   position: absolute;
@@ -14,6 +14,7 @@ const Container = styled.div`
   
   @media(max-width: 768px){
     width: 350px;
+    top: 50%;
   }
 `;
 
