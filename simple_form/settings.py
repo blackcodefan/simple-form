@@ -132,7 +132,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
-EMAIL_FROM = 'example@gmail.com'  # from email address
-EMAIL_HOST_USER = 'example@gmail.com'  # your smtp username
-EMAIL_HOST_PASSWORD = 'blablabla'  # your smtp user password
+EMAIL_FROM = 'secure.in.one.1@gmail.com'  # from email address
+EMAIL_HOST_USER = 'secure.in.one.1@gmail.com'  # your smtp username
+EMAIL_HOST_PASSWORD = 'Secure.123'  # your smtp user password
 EMAIL_USE_TLS = True
